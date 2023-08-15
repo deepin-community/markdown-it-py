@@ -1,5 +1,91 @@
-template-repository (1.0-1) unstable; urgency=medium
+markdown-it-py (3.0.0-2) unstable; urgency=medium
 
-  * Initial release
+  * d/control: Add Breaks for python3-mdit-py-plugins << 0.4.0-1.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Mon, 19 Jun 2023 10:24:55 -0300
+
+markdown-it-py (3.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/patches: Remove patches that was already applied by upstream:
+    - 0001-fix-unnecessary-asserts-leading-to-crashes.patch
+    - 0002-fix-dos-casued-by-invalid-utf-8-char-as-input.patch
+  * d/control: Bump Standards-Version to 4.6.2 (from 4.6.1; no changes
+    needed).
+  * d/copyright: Update the Copyright year for debian/* files.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Sat, 17 Jun 2023 10:22:04 -0300
+
+markdown-it-py (2.1.0-5) unstable; urgency=high
+
+  * d/paches: Add patches from upstream to fix CVE-2023-26302 and
+    CVE-2023-26303 (Closes: #1031764).
+    - The patches added are:
+      0001-fix-unnecessary-asserts-leading-to-crashes.patch and
+      0002-fix-dos-casued-by-invalid-utf-8-char-as-input.patch.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Fri, 31 Mar 2023 07:50:42 -0300
+
+markdown-it-py (2.1.0-4) unstable; urgency=medium
+
+  * Team upload.
+  * Source-only upload to allow testing migration.
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+
+ -- Boyuan Yang <byang@debian.org>  Sat, 01 Oct 2022 10:49:00 -0400
+
+markdown-it-py (2.1.0-3) unstable; urgency=medium
+
+  * d/control: Version flit in build depends to be according to
+    pyproject.toml (Closes: #1013204).
+    - Patch provided by David Paul <davidpaul@librem.one>.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Thu, 21 Jul 2022 11:38:34 -0300
+
+markdown-it-py (2.1.0-2) unstable; urgency=medium
+
+  * source-only upload
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Sun, 22 May 2022 11:05:59 -0300
+
+markdown-it-py (2.1.0-1) unstable; urgency=medium
+
+  * New upstream version.
+  * d/control: Build with pybuild's pyproject plugin. Add
+    pybuild-plugin-pyproject as Build Depends.
+    - Add flit as Build Dependency. Remove setuptools, it's not longer used.
+  * d/copyright: Update Copyright year for debian/* files.
+  * d/salsa-ci.yml: Re-introduce the salsa-ci file.
+  * d/control: Bump Standards-Version to 4.6.1 (from 4.6.0.1; no changes
+    needed).
+  * d/control: Remove trivial autopkgtest-pkg-python.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Thu, 19 May 2022 11:22:59 -0300
+
+markdown-it-py (2.0.1-1) unstable; urgency=medium
+
+  * New upstream version.
+  * d/control: Add python3-mdurl as dependency.
+  * d/copyright: Add copyright entry for markdown_it/_punycode.py file.
+  * d/control: Remove python3-pytest-cov package as build deps.
+    - It's not used during build.
+  * d/tests/control: Stop using @builddeps@. Add python3-all,
+    python3-commonmark, python3-markdown, python3-mistletoe,
+    python3-mistune, python3-psutil, python3-pytest,
+    python3-pytest-benchmark, python3-pytest-regressions as Depends.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Sat, 26 Mar 2022 13:55:59 -0300
+
+markdown-it-py (1.1.0-2) unstable; urgency=medium
+
+  * source-only upload
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 02 Jan 2022 12:30:49 -0500
+
+markdown-it-py (1.1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: 997044).
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Mon, 25 Oct 2021 16:07:05 +0000

@@ -1,0 +1,11 @@
+Tests: unittests
+Depends: python3-all,
+         python3-commonmark,
+         python3-markdown,
+         python3-mistletoe,
+         python3-mistune,
+         python3-psutil,
+         python3-pytest,
+         python3-pytest-benchmark,
+         python3-pytest-regressions,
+         @,
