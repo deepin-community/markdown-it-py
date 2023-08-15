@@ -1,0 +1,20 @@
+#!/bin/sh
+set -efu
+
+pys="$(py3versions -s 2> /dev/null)"
+
+
+cp -a tests "$AUTOPKGTEST_TMP"
+cp -a benchmarking "$AUTOPKGTEST_TMP"
+
+cd "$AUTOPKGTEST_TMP"
+
+
+for py in $pys; do
+	echo "=== $py ==="
+    # ignore linkify tests until linkify is package in Debian #997970
+	$py -m pytest --ignore tests/test_linkify.py \
+                               --ignore tests/test_port/test_fixtures.py \
+						       -k 'not test_linkify' 2>&1
+    $py -m pytest benchmarking/bench_core.py benchmarking/bench_packages.py 2>&1
+done
